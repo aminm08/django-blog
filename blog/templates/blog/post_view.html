@@ -1,0 +1,76 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    blog
+{% endblock title %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-9">
+                {% for p in post %}
+
+
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ blog.image.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ p.title }}</h5>
+                            <p class="card-text">{{ p.text }}</p>
+                            <p class="card-text">{{ p.author }}</p>
+                            <a href="{% url "detail_view" p.id %}" class="btn btn-primary">Read more</a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+
+            <div class="col-3">
+
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://th.bing.com/th/id/OIP.mCE3ZrOFiY102b8JyFIH2QHaEo?pid=ImgDet&rs=1"
+                                 class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://th.bing.com/th/id/R.0468ed1a2a5c9b423e800933a0e956b3?rik=RQuUwiWXowR2jA&riu=http%3a%2f%2fwww.birdsandblooms.com%2fwp-content%2fuploads%2f2015%2f06%2f1150869.jpg&ehk=WhyC4pNB1XDjBG5ohwlQaqmKcLJWtjGGp191CJbYLH8%3d&risl=&pid=ImgRaw&r=0"
+                                 class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.shutterbug.com/images/photo_post/[uid]/Poinciana%20Flower.jpg"
+                                 class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+{% endblock content %}

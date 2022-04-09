@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+
+{% block title %}
+    Sign up
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container mt-4">
+        <div class="column">
+            <div class="col mt-9">
+
+                <div class="card">
+                    <h5 class="card-header">Signup</h5>
+                    <form method="post">
+                        {% csrf_token %}
+                        <table class="card-text">
+                            {{ form.as_table }}
+                        </table>
+                        <button class="btn btn-success" type="submit">submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock content %}
